@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reverseWords(s) {
+  const words = s.split(' ');
+
+  for (let i = 0; i < words.length; i++) {
+    words[i] = reverseString(words[i]);
+  }
+
+  return words.join(' ');
+}
+
+function reverseString(str) {
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+const s = "Let's take LeetCode contest";
+document.write("The ans. is a  "+reverseWords(s));
+
+    </script>
+</body>
+</html>

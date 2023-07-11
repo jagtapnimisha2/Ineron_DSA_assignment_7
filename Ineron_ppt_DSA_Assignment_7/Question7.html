@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isBackspaceEqual(s, t) {
+  const stackS = [];
+  const stackT = [];
+
+  for (const char of s) {
+    if (char === '#') {
+      if (stackS.length > 0) {
+        stackS.pop();
+      }
+    } else {
+      stackS.push(char);
+    }
+  }
+
+  for (const char of t) {
+    if (char === '#') {
+      if (stackT.length > 0) {
+        stackT.pop();
+      }
+    } else {
+      stackT.push(char);
+    }
+  }
+
+  return stackS.join('') === stackT.join('');
+}
+const s = "ab#c";
+const t = "ad#c";
+document.write("The ans. is a "+isBackspaceEqual(s, t));
+
+    </script>
+</body>
+</html>
